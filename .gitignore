@@ -4,6 +4,7 @@ packages/
 *.suo
 *.user
 *cache
+*.tmp
 _ReSharper*
 
 *NSubstitute*
