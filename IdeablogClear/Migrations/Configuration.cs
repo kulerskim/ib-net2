@@ -1,5 +1,6 @@
 namespace IdeablogClear.Migrations
 {
+    using IdeablogClear.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,10 @@ namespace IdeablogClear.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.Users.AddOrUpdate(
+                u => u.Name,
+                new User { Name = "Jan Testowy", Language = "he" }
+            );
         }
     }
 }
