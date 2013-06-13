@@ -59,3 +59,23 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
+
+/* IB Styles*/
+
+body{
+    padding-top: 50px;
+}
+
+.ib-languages{
+    float: right;
+}
+
+.tinymce{
+    width: 100%;
+    min-height: 250px;
+}
+
+.reply {
+  border-top: dashed 1px #57a900;
+  margin: 20px 0px;
+}
