@@ -12,6 +12,9 @@ namespace IdeablogClear.Models
         public int UserId { get; set; }
 
         [Required]
+        public String Name { get; set; }
+
+        [Required]
         public String Language { get; set; }
 
     }
