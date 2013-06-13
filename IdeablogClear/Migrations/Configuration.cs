@@ -31,6 +31,16 @@ namespace IdeablogClear.Migrations
                 u => u.Name,
                 new User { Name = "Jan Testowy", Language = "he" }
             );
+
+            context.Topics.AddOrUpdate(
+                t => t.TopicId,
+                new Topic { Title = "Seeded topic", Content = "Seeded content", CreatedById = context.Users.FirstOrDefault().UserId }
+                );
+
+            context.Replies.AddOrUpdate(
+                r => r.ReplyId,
+                new Reply { TopicId = context.Topics.FirstOrDefault().TopicId, Content = "Seeded reply", CreatedById = context.Users.FirstOrDefault().UserId }
+                );
         }
     }
 }
