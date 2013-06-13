@@ -135,6 +135,10 @@
     <Compile Include="Migrations\201306131140275_initial_version.Designer.cs">
       <DependentUpon>201306131140275_initial_version.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201306131144313_user_has_a_name.cs" />
+    <Compile Include="Migrations\201306131144313_user_has_a_name.Designer.cs">
+      <DependentUpon>201306131144313_user_has_a_name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IbContext.cs" />
     <Compile Include="Models\Reply.cs" />
@@ -237,6 +241,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201306131140275_initial_version.resx">
       <DependentUpon>201306131140275_initial_version.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306131144313_user_has_a_name.resx">
+      <DependentUpon>201306131144313_user_has_a_name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
