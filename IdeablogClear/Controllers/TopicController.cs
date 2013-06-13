@@ -49,6 +49,13 @@ namespace IdeablogClear.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Topic topic)
         {
+            var user = db.Users.FirstOrDefault();
+
+            if (user != null)
+                topic.CreatedById = user.UserId;
+            else
+                ModelState.AddModelError("CreatedById", "User is wrong");
+
             if (ModelState.IsValid)
             {
                 db.Topics.Add(topic);
