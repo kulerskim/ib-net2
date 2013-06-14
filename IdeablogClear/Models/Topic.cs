@@ -24,6 +24,7 @@ namespace IdeablogClear.Models
 
         [Required]
         public int CreatedById { get; set; }
+        [ForeignKey("CreatedById")]
         public virtual User CreatedBy { get; set; }
 
         public virtual ICollection<Reply> Replies { get; set; }

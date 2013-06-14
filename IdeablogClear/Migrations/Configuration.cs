@@ -34,12 +34,12 @@ namespace IdeablogClear.Migrations
 
             context.Topics.AddOrUpdate(
                 t => t.TopicId,
-                new Topic { Title = "Seeded topic", Content = "Seeded content", CreatedById = context.Users.FirstOrDefault().UserId }
+                new Topic { Title = "Seeded topic", Content = "Seeded content", CreatedBy = context.Users.FirstOrDefault() }
                 );
 
             context.Replies.AddOrUpdate(
                 r => r.ReplyId,
-                new Reply { TopicId = context.Topics.FirstOrDefault().TopicId, Content = "Seeded reply", CreatedById = context.Users.FirstOrDefault().UserId }
+                new Reply { Topic = context.Topics.FirstOrDefault(), Content = "Seeded reply", CreatedBy = context.Users.FirstOrDefault() }
                 );
         }
     }

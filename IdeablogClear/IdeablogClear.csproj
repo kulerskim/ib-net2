@@ -152,6 +152,10 @@
     <Compile Include="Migrations\201306131218378_topic_created_at_computed.Designer.cs">
       <DependentUpon>201306131218378_topic_created_at_computed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201306131414201_created_by_foreign_key.cs" />
+    <Compile Include="Migrations\201306131414201_created_by_foreign_key.Designer.cs">
+      <DependentUpon>201306131414201_created_by_foreign_key.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IbContext.cs" />
     <Compile Include="Models\Reply.cs" />
@@ -273,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201306131218378_topic_created_at_computed.resx">
       <DependentUpon>201306131218378_topic_created_at_computed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306131414201_created_by_foreign_key.resx">
+      <DependentUpon>201306131414201_created_by_foreign_key.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

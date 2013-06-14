@@ -86,9 +86,15 @@ namespace IdeablogClear.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Topic topic)
         {
+
             if (ModelState.IsValid)
             {
-                db.Entry(topic).State = EntityState.Modified;
+                var edited = db.Topics.Find(topic.TopicId);
+
+                edited.Title = topic.Title;
+                edited.Content = topic.Content;
+
+                db.Entry(edited).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
