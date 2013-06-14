@@ -4,40 +4,20 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<fieldset>
-    <legend>Topic</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Content)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Content)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.CreatedAt)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CreatedAt)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.CreatedById)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CreatedById)
-    </div>
-</fieldset>
+<h1>@Html.DisplayFor(model => model.Title)</h1>
+<p class='muted text-right'>Created by @Model.CreatedBy on @Html.DisplayFor(model => model.CreatedAt)</p>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.TopicId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.DisplayFor(model => model.Content)
 </p>
+<div class='btn-group'>   
+   @Html.ActionLink("Back", "Index", new { }, new { @class="btn"})  
+</div>
+<div class='replies'>
+    @foreach(var reply in Model.Replies){
+        <article class='reply'>
+            <!--<p class='muted text-right'><%=_("Created by #{reply.created_by} on #{reply.created_at}")%></p>-->
+            @reply.Content        
+        </article>    
+    }
+</div>

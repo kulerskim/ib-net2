@@ -17,5 +17,11 @@ namespace IdeablogClear.Models
         [Required]
         public String Language { get; set; }
 
+        public override string ToString()
+        {
+            return Name;
+        }
+
     }
+
 }
